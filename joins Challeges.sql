@@ -18,9 +18,8 @@ WHERE address.district = 'California';
 SELECT * FROM actor
 WHERE first_name = 'Nick' AND last_name = 'Wahlberg';
 
-SELECT * FROM film_actor
+SELECT * FROM film
 WHERE actor_id = 2;
-
 
 SELECT film_actor.actor_id, first_name, last_name, film_actor.film_id, film.title from actor
 LEFT JOIN film_actor
