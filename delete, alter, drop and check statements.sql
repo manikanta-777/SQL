@@ -58,3 +58,43 @@ ALTER COLUMN people SET NOT NULL;    -- setting
  
 SELECT * FROM new_info;
 
+
+--DROP
+ALTER TABLE new_info
+DROP COLUMN people;
+
+SELECT * FROM new_info;
+
+ALTER TABLE new_info
+DROP COLUMN IF EXISTS people;
+
+--CHECK
+
+CREATE TABLE employees(
+emp_id SERIAL PRIMARY KEY,
+first_name VARCHAR(50) NOT NULL,
+last_name VARCHAR(50) NOT NULL,
+birth_date DATE CHECK (birth_date > '1900-01-01'),
+hire_date DATE CHECK (hire_date > birth_date),
+salary INTEGER CHECK (salary > 0)
+);
+
+SELECT * FROM employees;
+
+INSERT INTO employees(
+	first_name,
+	last_name,
+	birth_date,
+	hire_date,
+	salary
+	)
+	VALUES(
+      'mani',
+	  'ch',
+	  '1899-10-10',
+	  '2021-10-26',
+	  100
+	)
+
+
+
