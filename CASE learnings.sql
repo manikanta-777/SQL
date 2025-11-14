@@ -38,3 +38,42 @@ SUM (CASE rental_rate
 	ELSE 0
 END) AS premium
 from film;
+
+SELECT * FROM payment;
+
+SELECT * FROM film;
+
+
+-- CASE challenge
+
+SELECT 
+SUM (CASE rating
+	WHEN 'R' THEN 1
+	ELSE 0
+END) AS r,
+SUM (CASE rating
+	WHEN 'PG' THEN 1
+	ELSE 0
+END) AS pg13,
+SUM (CASE rating
+	WHEN 'PG-13' THEN 1
+	ELSE 0
+END) AS pg13
+from film;
+
+-- COALESCE
+
+---CAST
+
+SELECT CAST('5' AS INTEGER);
+SELECT CAST('5' AS INTEGER) AS new_int;
+SELECT CAST('five' AS INTEGER); -- gives error
+
+SELECT '5'::INTEGER;
+SELECT '5'::INTEGER AS new_int;
+
+SELECT * FROM rental;
+
+SELECT CHAR_LENGTH(CAST(inventory_id AS VARCHAR)) FROM rental;
+
+
